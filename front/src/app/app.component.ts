@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   constructor(){}
-  private isCollapsed:boolean = true;
+  private isCollapsed:boolean = false;
   ngOnInit() {
   }
   collapseChange(){
