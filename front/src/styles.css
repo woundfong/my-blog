@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+.ant-layout-sider-trigger {
+    display: none;
+}
+/* .ant-layout-sider-zero-width-trigger {
+    display: none;
+} */
