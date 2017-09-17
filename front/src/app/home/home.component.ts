@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { GlobalService } from '../global/global.service'
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private globalService: GlobalService
+  ) { }
 
   ngOnInit() {
+    this.globalService.setSubjectPapers(false);
   }
-
+  
 }

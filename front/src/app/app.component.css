@@ -148,6 +148,7 @@
 }
 .hide .header-title {
     padding-left: 0;
+    
 }
 #top-header.scrollTop {
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
@@ -163,8 +164,9 @@
     background: #0f9d58;
     text-shadow: 0 1px 1px rgba(0,0,0,0.2);
     
-    -webkit-transition: padding-left .7s ease-in-out;
-    transition: padding-left .7s ease-in-out;
+}
+.hide #info-header {
+    text-align: center;
 }
 .container {
     position: relative;
@@ -185,11 +187,13 @@
 .body-wrap {
     min-height: calc(100% - 280px);
     padding: 20px;
+    text-align: center;
 }
+
 footer {
     /* background: #0c7e46; */
-    position: fixed;
-    bottom: 0;
+    /* position: fixed;
+    bottom: 0; */
     width: 100%;
 }
 footer .bottom {

@@ -1,0 +1,31 @@
+:host ::ng-deep .custom-image img {
+    display: block;
+}
+
+:host ::ng-deep .custom-card {
+    padding: 10px 16px;
+}
+
+:host ::ng-deep .custom-card p {
+    color: #999;
+}
+
+:host ::ng-deep .ant-card-body {
+    padding: 0;
+    cursor: pointer;
+}
+.card {
+    width:350px;
+    display: inline-block; 
+    text-align: center;
+    overflow: hidden;
+    transition: all .3s ease;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    padding: 20px;
+    box-sizing: border-box;
+}
+.card h3 {
+    font-size: 18px;
+}

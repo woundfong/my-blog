@@ -20,19 +20,20 @@
       </div>
     </div>
   </aside>
-  <nz-layout style="min-height:100%; background: #fff">
+  <nz-layout style="min-height:95%; background: #fff">
   <main id="main" [class.hide]="isCollapsed" class="trans-padding-left">
     <header id="top-header" [class.scrollTop]="isScrollTop">
       <div class="flex-row">
         <i class="anticon trigger anticon-menu-unfold" 
-        (click)="changeCollapsed()">
+        (click)="changeCollapsed()"
+        *ngIf="isCollapsed || !isMediaShow">
         </i>
       
-        <div class="flex-col header-title ellipsis trans-padding-left">周焕丰</div>
+        <div class="flex-col header-title ellipsis trans-padding-left">{{headerTitle}}</div>
       </div>
     </header>
     <header id="info-header" class="trans-padding-left">
-      <div class="container">
+      <div class="container" [style.visibility]="isPaperPage ? 'hidden' : 'visible'">
         <h1 #scrollInfo>周焕丰</h1>
         <h5> a web developer </h5>
       </div>
@@ -46,7 +47,7 @@
 <footer [class.collapsed-padding]="!isCollapsed" class="trans-padding-left">
   <div class="bottom" *ngIf="!isMediaShow">
     <p>
-      <span class="copyright">周焕丰 © 2017-&nbsp</span>
+      <span class="copyright">周焕丰 © 2017- &nbsp;</span>
       <span class="ipc-number">
         <a href="http://www.miitbeian.gov.cn/">粤ICP备17114499号
         </a>
