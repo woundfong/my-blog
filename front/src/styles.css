@@ -5,3 +5,8 @@
 /* .ant-layout-sider-zero-width-trigger {
     display: none;
 } */
+html, body {
+    position: relative;
+    min-height: 100%;
+    height: 100%;
+}

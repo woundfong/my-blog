@@ -1,43 +1,58 @@
-<nz-layout style="height:100%">
-  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" style="height:100%"
-    [nzBreakpoint]="'xs'" [nzCollapsedWidth]="0" [nzTrigger]="null"
-    nzCollapseChange="collapseChange($event)">
-    <div class="logo">
-    </div>
-    <ul nz-menu [nzTheme]="'dark'" [nzMode]="isCollapsed?'vertical':'inline'">
-      <li nz-submenu>
-        <span title><i class="anticon anticon-book"></i><span class="nav-text">文章</span></span>
-        <ul>
-          <a>
-            <li nz-menu-item>angular-cli从零到一搭建个人网站</li>
-          </a>
-        </ul>
-      </li>
-      <li nz-menu-item>
-        <span title><i class="anticon anticon-solution"></i><span class="nav-text">微博</span></span>
-      </li>
-      <li nz-menu-item><span><i class="anticon anticon-user"></i><span class="nav-text">About Me</span></span></li>
-    </ul>
-  </nz-sider>
-  <nz-layout>
-    <nz-header style="background: #fff; padding:0;">
-      <i class="anticon trigger" [class.anticon-menu-fold]="!isCollapsed" [class.anticon-menu-unfold]="isCollapsed" (click)="isCollapsed=!isCollapsed"></i>
-      <span >周焕丰</span>
-    </nz-header>
-    <nz-content style="margin:0 16px;">
-      <nz-breadcrumb style="margin:12px 0;">
-        <nz-breadcrumb-item style="cursor: pointer">
-          <a routerLink="/home">
-            <i class="anticon anticon-home" style="margin-left:5px"></i>首页
-          </a>
-        </nz-breadcrumb-item>
-        <nz-breadcrumb-item>Bill</nz-breadcrumb-item>
-      </nz-breadcrumb>
-      <div style="padding:24px; background: #fff; min-height: 360px;">
-        <router-outlet></router-outlet>
-        {{isCollapsed}}
+
+  <aside id="menu" [class.hide]="isCollapsed" [class.media-show]="isMediaShow">
+    <div class="flex-menu">
+      <i class="anticon trigger anticon-menu-fold" 
+       (click)="changeCollapsed()"
+       *ngIf="!isCollapsed">
+      </i>
+      <div id="menu-header-bg">
       </div>
-    </nz-content>
-    <nz-footer style="text-align: center;">周焕丰 ©2017 Implement By Angular</nz-footer>
+      <span id="menu-header-name">周焕丰</span>
+      <img id="menu-header-logo" src="../assets/header-logo.jpg"/>
+      <div class="flex-col">
+        <ul nz-menu class="nav" >
+          <li nz-menu-item>
+            <span><i class="anticon anticon-file-text"></i>
+              <span class="nav-text">文章</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+  <nz-layout style="min-height:100%; background: #fff">
+  <main id="main" [class.hide]="isCollapsed" class="trans-padding-left">
+    <header id="top-header" [class.scrollTop]="isScrollTop">
+      <div class="flex-row">
+        <i class="anticon trigger anticon-menu-unfold" 
+        (click)="changeCollapsed()">
+        </i>
+      
+        <div class="flex-col header-title ellipsis trans-padding-left">周焕丰</div>
+      </div>
+    </header>
+    <header id="info-header" class="trans-padding-left">
+      <div class="container">
+        <h1 #scrollInfo>周焕丰</h1>
+        <h5> a web developer </h5>
+      </div>
+    </header>
+    <div class="container body-wrap">
+      <router-outlet></router-outlet>
+    </div>
+  
+  </main>
   </nz-layout>
-</nz-layout>
+<footer [class.collapsed-padding]="!isCollapsed" class="trans-padding-left">
+  <div class="bottom" *ngIf="!isMediaShow">
+    <p>
+      <span class="copyright">周焕丰 © 2017-&nbsp</span>
+      <span class="ipc-number">
+        <a href="http://www.miitbeian.gov.cn/">粤ICP备17114499号
+        </a>
+      </span>
+    </p>
+  </div>
+</footer>
+<div id="box-shadow" *ngIf="isMediaShow" (click)="hideShadow()">
+</div>
