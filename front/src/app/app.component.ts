@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   private isScrollTop:boolean = false;
   private isPaperPage:boolean = false;
   private headerTitle:string = "周焕丰";
+  private title:string = "周焕丰";
   constructor(
     private globalService: GlobalService
   ){

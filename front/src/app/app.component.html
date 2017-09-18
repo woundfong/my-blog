@@ -11,10 +11,15 @@
       <img id="menu-header-logo" src="../assets/header-logo.jpg"/>
       <div class="flex-col">
         <ul nz-menu class="nav" >
-          <li nz-menu-item>
-            <span><i class="anticon anticon-file-text"></i>
+          <li nz-submenu>
+            <span title><i class="anticon anticon-file-text"></i>
               <span class="nav-text">文章</span>
             </span>
+            <ul>
+              <li nz-menu-item routerLink="/setupWebSiteByNg">
+                阿里云服务器布置angular2网站
+              </li>
+            </ul>
           </li>
         </ul>
       </div>
@@ -32,9 +37,9 @@
         <div class="flex-col header-title ellipsis trans-padding-left">{{headerTitle}}</div>
       </div>
     </header>
-    <header id="info-header" class="trans-padding-left">
+    <header id="info-header" class="trans-padding-left" [class.papar-page]="isPaperPage">
       <div class="container" [style.visibility]="isPaperPage ? 'hidden' : 'visible'">
-        <h1 #scrollInfo>周焕丰</h1>
+        <h1>{{title}}</h1>
         <h5> a web developer </h5>
       </div>
     </header>

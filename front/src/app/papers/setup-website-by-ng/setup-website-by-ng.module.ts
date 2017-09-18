@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SetupWebsiteByNgComponent } from './setup-website-by-ng.component';
 import { RouterModule, Routes } from '@angular/router';
+import { NgZorroAntdModule } from 'ng-zorro-antd';
 
 const routes: Routes = [
   {
@@ -13,7 +14,8 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forChild(routes),
-    CommonModule
+    CommonModule,
+    NgZorroAntdModule.forRoot()
   ],
   declarations: [SetupWebsiteByNgComponent]
 })

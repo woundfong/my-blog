@@ -1,0 +1,65 @@
+.paper-card {
+    border-radius: 5px;
+    display: inline-block;
+    width: 900px;
+    -webkit-box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    z-index: 50;
+    margin-top: -150px;
+}
+
+h2 {
+    text-align: left;
+}
+.paper-info {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row;
+    justify-content: flex-start
+}
+.paper-info-items {
+    margin-right: 10px;
+    color: #B6B6B6;
+}
+#fade-header {
+    position: fixed;
+    left: 0;
+    top: 130px;
+    width: 100%;
+    color: #fff;
+    height: 56px;
+    background: #0f9d58;
+    z-index: 30;
+    text-align: left;
+    display: none;
+}
+#fade-header h1 {
+    color: #fff;
+    margin-left: 20px;
+    text-align: left;
+}
+@media screen and (max-width: 1024px) {
+    .paper-card {
+        width: calc(100% - 50px);
+    }
+}
+@media screen and (max-width: 760px) {
+    .paper-card .tags {
+        display: none;
+    }
+    .paper-card {
+        margin-top: 20px;
+    }
+    #fade-header {
+        display: block;
+    }
+    h2 {
+        display: none;
+    }
+}
+@media screen and (max-width: 450px) {
+    
+}

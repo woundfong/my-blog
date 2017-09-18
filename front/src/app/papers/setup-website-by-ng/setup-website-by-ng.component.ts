@@ -7,7 +7,7 @@ import { GlobalService } from '../../global/global.service';
   styleUrls: ['./setup-website-by-ng.component.css']
 })
 export class SetupWebsiteByNgComponent implements OnInit {
-
+  private paperTitle:string = "阿里云服务器布置angular2网站";
   constructor(
     private globalService: GlobalService
   ) { }

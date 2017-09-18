@@ -15,7 +15,7 @@
     cursor: pointer;
 }
 .card {
-    width:350px;
+    width: 300px;
     display: inline-block; 
     text-align: center;
     overflow: hidden;
@@ -28,4 +28,33 @@
 }
 .card h3 {
     font-size: 18px;
+}
+
+@media screen and (max-width: 1299px){
+    .post-list-item {
+        width: calc(33.333% - 30px);
+        width: -webkit-calc(33.333% - 30px);
+    }
+}
+@media screen and (max-width: 1000px){
+    .card {
+        width: calc(50% - 30px);
+        width: -webkit-calc(50% - 30px);
+    }
+}
+@media screen and (max-width: 760px) {
+    .card {
+        width: calc(80% - 30px);
+        width: -webkit-calc(50% - 30px);
+    }
+}
+@media screen and (max-width: 450px) {
+    .card {
+        width: 290px !important;
+    }
+}
+@media screen and (max-width: 400px) {
+    .card {
+        width: 240px !important;
+    }
 }
