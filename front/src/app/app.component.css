@@ -62,7 +62,7 @@
     box-sizing: border-box;
 }
 #menu-header-bg {
-    background: url(../assets/header-background.jpg);
+    background: url(http://huanfeng-bucket.oss-cn-beijing.aliyuncs.com/img/header-background.jpg?Expires=1505751014&OSSAccessKeyId=TMP.AQGjoz2XwQ8-uXSaPyo2aT4MNGQdKNTnBxD4BvzIxmcMRqxJ5Qp2JPDht-aIAAAwLAIUCZvkit_58SrIPhL5AZdMFaohE6sCFEvEwFSjaglPYojrHsaVgy-BEyIb&Signature=b3ZcjlWU90I1TkHoeE3FP3%2FdBvs%3D);
     background-position: top right;
     background-size: 100%;
     height: 240px;
