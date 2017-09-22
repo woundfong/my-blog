@@ -19,7 +19,8 @@
         <nz-tag [nzColor]="'#B6B6B6'">阿里云</nz-tag>
         <nz-tag [nzColor]="'#B6B6B6'">angular2</nz-tag>
         <nz-tag [nzColor]="'#B6B6B6'">express</nz-tag>
-        <nz-tag [nzColor]="'#B6B6B6'">nginx</nz-tag>        
+        <nz-tag [nzColor]="'#B6B6B6'">nginx</nz-tag>
+        <nz-tag [nzColor]="'#B6B6B6'">性能优化</nz-tag>
       </div>
     </div>
   </ng-template>
@@ -245,7 +246,7 @@
           而<a href="http://nginx.org/">nginx</a>
           就可以帮助我们代理，其工作方式是代理服务器接受internet的连接请求，然后将请求转发到内部的服务器，
           然后再将内部服务器返回的结果返回到请求连接的客户端，中间通过nginx的配置文件实现代理，了解更多可以到官网或
-          百度。
+          百度。而且文章后面还可以看到nginx可以用于gzip压缩，提高响应速度。
         </p>
         <p class="steps-second-title"> 安装Nginx </p>
         <div class="codes">
@@ -580,6 +581,34 @@
         </div>
         <p class="paragraph">
           在不开启这两个模式之前，我的vendor.bundle.js文件有4.8M，但是之后就只有1.8M了。
+        </p>
+        <p class="steps-second-title"> 开启服务端gzip压缩
+        </p>
+        <p class="paragraph">
+          经过预编译之后vendor文件依然还有1.8M，这对移动端来说依然是不可接受的，毕竟这还没算上加载图片的流量。
+          在开启服务端或者nginx的反向代理的gzip压缩之后，可以将js文件的下载体积进一步减少。
+        </p>
+        <p class="paragraph">
+          使用vim编辑nginx.conf文件，在http的配置节点上加上以下代码：
+        </p>
+        <div class="codes">
+          <ol start="1">
+            <li> #开启gzip压缩 </li>
+            <li> {{"gzip on;"}}</li>
+            <li> {{"gzip_static on;"}} </li>
+            <li> {{"gzip_http_version 1.0;"}} </li>
+            <li> ##启用gzip压缩的最小文件，小于设置值的文件将不会被压缩</li>
+            <li> {{"gzip_min_length 1k;"}} </li>
+            <li> #gzip 压缩级别，1-9，数字越大压缩的越好，也越占CPU时间 </li>
+            <li> {{"gzip_comp_level 5;"}} </li>
+            <li> #进行压缩的文件类型，javascript有多种形式。其中的值可以在mime.type文件中找到</li>
+            <li> {{"gzip_types text/plain application/javascript application/x-javascript text/css application/xml text/javascript application/x-httpd-php image/jpeg image/gif image/png;"}}</li>
+            <li> #是否在http header中添加Vary:Accept-Encoding,建议开启 </li>
+            <li> {{"gzip_vary on;"}} </li>
+          </ol>
+        </div>
+        <p class="paragraph">
+          开启反向代理gzip压缩之后，vendor文件就只有400多k了，已经非常可以接受了！
         </p>
       </div>
       <div id="writen-after" class="writen">
