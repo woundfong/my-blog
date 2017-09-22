@@ -537,24 +537,6 @@
           1M带宽的，换算下来大概就是128k每秒这样，所以加载速度是很慢的，可能要等个十几秒才有反应...
         </p>
         <p class="steps-second-title">
-          使用对象存储OSS
-        </p>
-        <p class="paragraph"> 
-          assets中的图片可能会比较大，几百K是肯定有的，这样加载图片就要花费很多时间了。所以如果我们将项目的图片
-          都放到
-          <a href="https://www.aliyun.com/product/oss">OSS</a>上的话会好一点。
-        </p>
-        <figure>
-          <div class="figure-box">
-            <div class="img-shadow"></div>
-            <img id="myOSS-img" src="../../../assets/myOSS.png" />
-          </div>
-          <figcaption>对象存储OSS</figcaption>
-        </figure>
-        <p class="paragraph">
-          新建bucket之后就可以上传文件，然后获取文件链接，注意设置文件的过期时间，还有就是要了解OSS的计费方式。
-        </p>
-        <p class="steps-second-title">
           生产压缩与预编译
         </p>
         <p class="paragraph">
@@ -589,7 +571,17 @@
           在开启服务端或者nginx的反向代理的gzip压缩之后，可以将js文件的下载体积进一步减少。
         </p>
         <p class="paragraph">
-          使用vim编辑nginx.conf文件，在http的配置节点上加上以下代码：
+          首先，在node中让所有的请求压缩，在app.js中添加以下代码：
+        </p>
+        <div class="codes">
+          <ol start="1">
+            <li> //需express&nbsp;4.0以上版本： </li>
+            <li> {{"var compress = require('compression');"}} </li>
+            <li> {{"app.use(compress());"}} </li>
+          </ol>
+        </div>
+        <p class="paragraph">
+          然后使用vim编辑nginx.conf文件，在http的配置节点上加上以下代码：
         </p>
         <div class="codes">
           <ol start="1">
@@ -608,7 +600,7 @@
           </ol>
         </div>
         <p class="paragraph">
-          开启反向代理gzip压缩之后，vendor文件就只有400多k了，已经非常可以接受了！
+          开启反向代理gzip压缩之后，vendor文件就只有370多k了，已经非常可以接受了！
         </p>
       </div>
       <div id="writen-after" class="writen">
