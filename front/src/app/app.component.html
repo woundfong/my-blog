@@ -12,15 +12,28 @@
       <!-- <img id="menu-header-logo" src="http://huanfeng-bucket.oss-cn-beijing.aliyuncs.com/img/header-logo.jpg?Expires=1505751193&OSSAccessKeyId=TMP.AQGjoz2XwQ8-uXSaPyo2aT4MNGQdKNTnBxD4BvzIxmcMRqxJ5Qp2JPDht-aIAAAwLAIUCZvkit_58SrIPhL5AZdMFaohE6sCFEvEwFSjaglPYojrHsaVgy-BEyIb&Signature=1hQi%2F4vYo3xu%2FQDcu3ldd796DFQ%3D"/> -->
       <div class="flex-col">
         <ul nz-menu class="nav" [nzMode]="'inline'">
+          <li nz-menu-item routerLink="/home" routerLinkActive="ant-menu-item-selected"
+          (click)="clickMenu()">
+            <span title><i class="anticon anticon-home"></i>
+              <span class="nav-text">主页</span>
+            </span>
+          </li>
           <li nz-submenu>
-            <span title><i class="anticon anticon-file-text"></i>
+            <span title><i class="anticon anticon-book"></i>
               <span class="nav-text">文章</span>
             </span>
             <ul>
-              <li nz-menu-item routerLink="/setupWebSiteByNg">
+              <li nz-menu-item routerLink="/setupWebSiteByNg" routerLinkActive="ant-menu-item-selected"
+              (click)="clickMenu()">
                 阿里云服务器布置angular2网站
               </li>
             </ul>
+          </li>
+          <li nz-menu-item routerLink="/about-me" routerLinkActive="ant-menu-item-selected"
+          (click)="clickMenu()">
+            <span title><i class="anticon anticon-user"></i>
+              <span class="nav-text">About Me</span>
+            </span>
           </li>
         </ul>
       </div>
@@ -41,8 +54,8 @@
     </header>
     <header id="info-header" class="trans-padding-left" [class.papar-page]="isPaperPage">
       <div class="container" [style.visibility]="isPaperPage ? 'hidden' : 'visible'">
-        <h1>{{title}}</h1>
-        <h5> a web developer </h5>
+        <h1>{{description}}</h1>
+        <!-- <h5> {{description}} </h5> -->
       </div>
     </header>
     <div class="container body-wrap">

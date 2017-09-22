@@ -24,4 +24,11 @@ export class GlobalService {
       this.lastFadeHeader = flag;
     }
   }
+  private subject_description = new Subject<string>();
+  public getSubjectDescription(): Observable<string> {
+    return this.subject_description.asObservable();
+  }
+  public setSubjectDescription(sub:string) {
+    this.subject_description.next(sub);
+  }
 }

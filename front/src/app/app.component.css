@@ -105,7 +105,7 @@
 }
 #menu .nav {
     margin: 0;
-    padding-top: 32px;
+    padding-top: 40px;
     
     min-height: calc(100% - 115px);
     list-style: none;
@@ -151,7 +151,7 @@
     margin-right: 50px;
 }
 .hide .header-title {
-    padding-left: 0;
+    padding-left: 0 !important;
     
 }
 #top-header.scrollTop {
@@ -167,7 +167,7 @@
     color: #fff;
     background: #0f9d58;
     text-shadow: 0 1px 1px rgba(0,0,0,0.2);
-    
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16);
 }
 .hide #info-header {
     text-align: center;
@@ -183,7 +183,7 @@
     color: #fff;
 }
 #info-header .container h1 {
-    font-size: 44px;
+    font-size: 40px;
 }
 #info-header .container h5 {
     font-size: 16px;
@@ -260,6 +260,9 @@ footer p {
     footer.collapsed-padding{
         padding-left: 0;
     }
+    .header-title {
+        padding-left: 0;
+    }
 }
 @media screen and (min-width:1001px) {
     #box-shadow {
@@ -277,7 +280,7 @@ footer p {
         display: none;
     }
     #info-header .container h1 {
-        font-size: 24px;
+        font-size: 20px;
     }
     #info-header .container h5 {
         font-size: 18px;

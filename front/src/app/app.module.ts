@@ -14,18 +14,25 @@ import {enableProdMode} from '@angular/core';
 enableProdMode();
 const appRoutes: Routes = [
   {
-    path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
-  {
     path: 'home',
     component: HomeComponent
   },
   {
     path: 'setupWebSiteByNg',
-    loadChildren: './papers/setup-website-by-ng/setup-website-by-ng.module#SetupWebsiteByNgModule'
-    
+    loadChildren: './papers/setup-website-by-ng/setup-website-by-ng.module#SetupWebsiteByNgModule' 
+  },
+  {
+    path: 'about-me',
+    loadChildren: './about-me/about-me.module#AboutMeModule'
+  },
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    component: HomeComponent
   }
 ];
 

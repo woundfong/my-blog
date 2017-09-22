@@ -1,9 +1,8 @@
 :host ::ng-deep .ant-card-body {
     padding: 0;
-    cursor: pointer;
 }
 .card {
-    width: 400px;
+    width: 300px;
     display: inline-block; 
     text-align: center;
     overflow: hidden;
@@ -11,13 +10,18 @@
     border-radius: 4px;
     -webkit-box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    padding: 20px;
     box-sizing: border-box;
 }
-.card h3 {
-    font-size: 18px;
+.card .custom-card {
+    overflow-x: auto;
 }
-
+.card .custom-card ul {
+    text-align: left;
+}
+.card .custom-card ul li {
+    border-left: 3px solid #0f9d58;
+    padding: 10px;
+}
 @media screen and (max-width: 1299px){
     .post-list-item {
         width: calc(33.333% - 30px);

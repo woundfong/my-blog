@@ -10,3 +10,14 @@ html, body {
     min-height: 100%;
     height: 100%;
 }
+:host ::ng-deep .custom-image img {
+    display: block;
+}
+
+:host ::ng-deep .custom-card {
+    padding: 10px 16px;
+}
+
+:host ::ng-deep .custom-card p {
+    color: #999;
+}

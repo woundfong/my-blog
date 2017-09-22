@@ -8,12 +8,13 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class AppComponent implements OnInit {
   subscrip_papers: Subscription;
+  subscrip_description: Subscription;  
   isCollapsed:boolean = false;
   isMediaShow:boolean = false;
   isScrollTop:boolean = false;
   isPaperPage:boolean = false;
   headerTitle:string = "周焕丰";
-  title:string = "周焕丰";
+  description:string = "a web developer noob..."
   constructor(
     private globalService: GlobalService
   ){
@@ -26,6 +27,9 @@ export class AppComponent implements OnInit {
         this.isPaperPage = true;
         this.headerTitle = data;
       }
+    });
+    this.subscrip_description = this.globalService.getSubjectDescription().subscribe(sub=>{
+      this.description = sub;
     })
   }
   
@@ -51,10 +55,17 @@ export class AppComponent implements OnInit {
       this.isCollapsed = !this.isCollapsed;
     }
   }
+  clickMenu() {
+    let width = document.body.offsetWidth;
+    if(width < 1000){
+      this.isCollapsed = !this.isCollapsed;
+    }
+  }
   hideShadow() {
     this.isMediaShow = !this.isMediaShow;
   }
   ngOnDestroy() {
-      this.subscrip_papers.unsubscribe();
-    }
+    this.subscrip_papers.unsubscribe();
+    this.subscrip_description.unsubscribe();
+  }
 }
