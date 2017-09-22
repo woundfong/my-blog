@@ -18,6 +18,9 @@
 .nav-text {
     font-size: 18px;
 }
+:host ::ng-deep .nav li {
+    outline: none;
+}
 :host ::ng-deep .trigger {
     font-size: 18px;
     line-height: 64px;
@@ -62,7 +65,8 @@
     box-sizing: border-box;
 }
 #menu-header-bg {
-    background: url(http://huanfeng-bucket.oss-cn-beijing.aliyuncs.com/img/header-background.jpg?Expires=1505751014&OSSAccessKeyId=TMP.AQGjoz2XwQ8-uXSaPyo2aT4MNGQdKNTnBxD4BvzIxmcMRqxJ5Qp2JPDht-aIAAAwLAIUCZvkit_58SrIPhL5AZdMFaohE6sCFEvEwFSjaglPYojrHsaVgy-BEyIb&Signature=b3ZcjlWU90I1TkHoeE3FP3%2FdBvs%3D);
+    background: url(../assets/header-background.jpg);
+    /* background: url(http://huanfeng-bucket.oss-cn-beijing.aliyuncs.com/img/header-background.jpg?Expires=1505751014&OSSAccessKeyId=TMP.AQGjoz2XwQ8-uXSaPyo2aT4MNGQdKNTnBxD4BvzIxmcMRqxJ5Qp2JPDht-aIAAAwLAIUCZvkit_58SrIPhL5AZdMFaohE6sCFEvEwFSjaglPYojrHsaVgy-BEyIb&Signature=b3ZcjlWU90I1TkHoeE3FP3%2FdBvs%3D);     */
     background-position: top right;
     background-size: 100%;
     height: 240px;
@@ -134,7 +138,7 @@
     color: #fff;
     height: 56px;
     background: #0f9d58;
-    z-index: 30;
+    z-index: 60;
 }
 .header-title {
     visibility: hidden;
@@ -144,7 +148,7 @@
     text-align: center;
     white-space: nowrap;
     padding-left: 190px;
-    
+    margin-right: 50px;
 }
 .hide .header-title {
     padding-left: 0;
@@ -189,7 +193,14 @@
     padding: 20px;
     text-align: center;
 }
-
+:host ::ng-deep #main nz-back-top .ant-back-top {
+    right: 50px;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+:host ::ng-deep #main.hide nz-back-top .ant-back-top {
+    right: 100px;
+}
 footer {
     /* background: #0c7e46; */
     /* position: fixed;
@@ -270,5 +281,8 @@ footer p {
     }
     #info-header .container h5 {
         font-size: 18px;
+    }
+    :host ::ng-deep #main nz-back-top .ant-back-top {
+        right: 50px !important;
     }
 }

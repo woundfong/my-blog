@@ -7,13 +7,13 @@ import { Subscription } from 'rxjs/Subscription';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  private subscrip_papers: Subscription;
-  private isCollapsed:boolean = false;
-  private isMediaShow:boolean = false;
-  private isScrollTop:boolean = false;
-  private isPaperPage:boolean = false;
-  private headerTitle:string = "周焕丰";
-  private title:string = "周焕丰";
+  subscrip_papers: Subscription;
+  isCollapsed:boolean = false;
+  isMediaShow:boolean = false;
+  isScrollTop:boolean = false;
+  isPaperPage:boolean = false;
+  headerTitle:string = "周焕丰";
+  title:string = "周焕丰";
   constructor(
     private globalService: GlobalService
   ){
@@ -22,11 +22,9 @@ export class AppComponent implements OnInit {
         this.isCollapsed = data;
         this.isPaperPage = data;
       }else {
-        console.log(data);
         this.isCollapsed = true;
         this.isPaperPage = true;
         this.headerTitle = data;
-        console.log(this.headerTitle);
       }
     })
   }
@@ -37,8 +35,10 @@ export class AppComponent implements OnInit {
       let top = document.documentElement.scrollTop || document.body.scrollTop;
       if(top >= 57){
         this.isScrollTop = true;
+        this.globalService.setSubjectFadeHeader(false);
       }else{
         this.isScrollTop = false;
+        this.globalService.setSubjectFadeHeader(true);
       }
       
     }

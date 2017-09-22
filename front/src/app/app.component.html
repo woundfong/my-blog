@@ -1,4 +1,4 @@
-
+<nz-layout>
   <aside id="menu" [class.hide]="isCollapsed" [class.media-show]="isMediaShow">
     <div class="flex-menu">
       <i class="anticon trigger anticon-menu-fold" 
@@ -8,9 +8,10 @@
       <div id="menu-header-bg">
       </div>
       <span id="menu-header-name">周焕丰</span>
-      <img id="menu-header-logo" src="http://huanfeng-bucket.oss-cn-beijing.aliyuncs.com/img/header-logo.jpg?Expires=1505751193&OSSAccessKeyId=TMP.AQGjoz2XwQ8-uXSaPyo2aT4MNGQdKNTnBxD4BvzIxmcMRqxJ5Qp2JPDht-aIAAAwLAIUCZvkit_58SrIPhL5AZdMFaohE6sCFEvEwFSjaglPYojrHsaVgy-BEyIb&Signature=1hQi%2F4vYo3xu%2FQDcu3ldd796DFQ%3D"/>
+      <img id="menu-header-logo" src="../assets/header-logo.jpg"/>
+      <!-- <img id="menu-header-logo" src="http://huanfeng-bucket.oss-cn-beijing.aliyuncs.com/img/header-logo.jpg?Expires=1505751193&OSSAccessKeyId=TMP.AQGjoz2XwQ8-uXSaPyo2aT4MNGQdKNTnBxD4BvzIxmcMRqxJ5Qp2JPDht-aIAAAwLAIUCZvkit_58SrIPhL5AZdMFaohE6sCFEvEwFSjaglPYojrHsaVgy-BEyIb&Signature=1hQi%2F4vYo3xu%2FQDcu3ldd796DFQ%3D"/> -->
       <div class="flex-col">
-        <ul nz-menu class="nav" >
+        <ul nz-menu class="nav" [nzMode]="'inline'">
           <li nz-submenu>
             <span title><i class="anticon anticon-file-text"></i>
               <span class="nav-text">文章</span>
@@ -25,6 +26,7 @@
       </div>
     </div>
   </aside>
+</nz-layout>
   <nz-layout style="min-height:95%; background: #fff">
   <main id="main" [class.hide]="isCollapsed" class="trans-padding-left">
     <header id="top-header" [class.scrollTop]="isScrollTop">
@@ -46,7 +48,7 @@
     <div class="container body-wrap">
       <router-outlet></router-outlet>
     </div>
-  
+    <nz-back-top [nzVisibilityHeight]="1000"></nz-back-top>  
   </main>
   </nz-layout>
 <footer [class.collapsed-padding]="!isCollapsed" class="trans-padding-left">
