@@ -58,7 +58,7 @@ export class AppComponent implements OnInit {
   clickMenu() {
     let width = document.body.offsetWidth;
     if(width < 1000){
-      this.isCollapsed = !this.isCollapsed;
+      this.isMediaShow = !this.isMediaShow;
     }
   }
   hideShadow() {
