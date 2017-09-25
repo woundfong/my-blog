@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.globalService.setSubjectPapers(false);
-    this.globalService.setSubjectDescription('周焕丰 a web developer noob...');
+    this.globalService.setSubjectDescription('周焕丰 a noob of web developer...');
   }
   
 }
