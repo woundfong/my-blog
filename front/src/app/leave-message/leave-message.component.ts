@@ -18,7 +18,7 @@ export class LeaveMessageComponent implements OnInit {
   myName:string = "周焕丰";
   anonymous:boolean = false;
   ngOnInit() {
-    this.globalService.setSubjectDescription('个人介绍');
+    this.globalService.setSubjectDescription('留言');
   }
   leaveMsg() {
     let param = {};
