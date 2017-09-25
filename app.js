@@ -10,7 +10,7 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
-
+var api = require('./server/api');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.engine('.html', ejs.__express);
@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, 'front/dist')));
 // app.use('/home', express.static(path.join(__dirname, 'front/dist')));
 app.use('/', index);
 // app.use('/users', users);
-
+app.use('/api', api);
 app.get('*', (req, res)=>{
   res.sendFile(path.join(__dirname, 'front/dist/index.html'));
 });

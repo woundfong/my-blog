@@ -33,17 +33,13 @@
 @media screen and (max-width: 760px) {
     .card {
         width: calc(80% - 30px);
-        width: -webkit-calc(50% - 30px);
+        width: -webkit-calc(80% - 30px);
     }
     
 }
 @media screen and (max-width: 450px) {
     .card {
-        width: 290px !important;
-    }
-}
-@media screen and (max-width: 400px) {
-    .card {
-        width: 240px !important;
+        width: calc(100% - 10px);
+        width: -webkit-calc(100% - 10px);
     }
 }

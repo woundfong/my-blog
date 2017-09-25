@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   isScrollTop:boolean = false;
   isPaperPage:boolean = false;
   headerTitle:string = "周焕丰";
-  description:string = "a web developer noob..."
+  description:string = "周焕丰 a web developer noob..."
   constructor(
     private globalService: GlobalService
   ){

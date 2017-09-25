@@ -190,7 +190,7 @@
 }
 .body-wrap {
     min-height: calc(100% - 280px);
-    padding: 20px;
+    padding: 10px;
     text-align: center;
 }
 :host ::ng-deep #main nz-back-top .ant-back-top {

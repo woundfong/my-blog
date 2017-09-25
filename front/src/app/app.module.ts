@@ -26,6 +26,10 @@ const appRoutes: Routes = [
     loadChildren: './about-me/about-me.module#AboutMeModule'
   },
   {
+    path: 'leave-message',
+    loadChildren: './leave-message/leave-message.module#LeaveMessageModule'
+  },
+  {
     path: '',
     redirectTo: '/home',
     pathMatch: 'full'

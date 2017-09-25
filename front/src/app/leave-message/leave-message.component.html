@@ -1,0 +1,30 @@
+<nz-card class="msg-card">
+  <ng-template #body>
+    <div>
+      <nz-input [nzType]="'text'" style="padding-left:5px" [nzDisabled]="true"
+      [(ngModel)]="myName">
+        <ng-template #addOnBefore>收件人：</ng-template>
+      </nz-input>
+    </div>
+    <div id="name">
+      <nz-input [nzType]="'text'"
+      [(ngModel)]="inputName" style="padding-left:5px" nzPlaceHolder="尊姓大名">
+        <ng-template #addOnBefore>发件人：</ng-template>
+      </nz-input>
+    </div>
+    <div id="msg">
+      <nz-input [(ngModel)]="inputMsg" nzType="textarea" 
+       nzPlaceHolder="给点建议吧..." [nzRows]="'6'">
+      </nz-input>
+    </div>
+    <div class="bottom">
+      <label nz-checkbox [(ngModel)]="anonymous">
+      <span>匿名</span>
+    </label>
+      <button nz-button [nzType]="'primary'" [nzSize]="'large'" id="submit-btn"
+      (click)="leaveMsg()" [disabled]="!inputMsg || (!anonymous && !inputName)">
+        <span>发送</span>
+      </button>
+    </div>
+  </ng-template>
+</nz-card>

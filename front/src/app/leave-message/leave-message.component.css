@@ -1,0 +1,51 @@
+:host ::ng-deep .ant-card-body {
+    padding: 0;
+}
+.msg-card {
+    width: 400px;
+    display: inline-block; 
+    text-align: center;
+    overflow: hidden;
+    transition: all .3s ease;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+    padding: 20px;
+}
+.msg-card #name {
+    margin: 10px 0;
+}
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    margin-top: 20px;
+}
+.bottom label {
+    flex: 0.3;
+}
+.bottom #submit-btn {
+    flex: 0.7;
+}
+
+@media screen and (max-width: 1000px){
+    .msg-card {
+        width: calc(50% - 30px);
+        width: -webkit-calc(50% - 30px);
+    }
+}
+@media screen and (max-width: 760px) {
+    .msg-card {
+        width: calc(80% - 30px);
+        width: -webkit-calc(80% - 30px);
+    }
+    
+}
+@media screen and (max-width: 450px) {
+    .msg-card {
+        width: calc(100% - 10px);
+        width: -webkit-calc(100% - 10px);
+    }
+}
