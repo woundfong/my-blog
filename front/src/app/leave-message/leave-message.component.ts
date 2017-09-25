@@ -26,6 +26,10 @@ export class LeaveMessageComponent implements OnInit {
       this._message.create('error', '含有非法字符');
       return;
     }
+    if(this.inputName.indexOf('root')>=0) {
+      this._message.create('error', '非法的名字');
+      return;
+    }
     if(this.inputMsg && !this.anonymous) {
       param = {name:this.inputName, msg: this.inputMsg};
     }else if(this.inputMsg && this.anonymous){
@@ -43,7 +47,7 @@ export class LeaveMessageComponent implements OnInit {
     })
   }
   checkMsg() {
-    let inj_str = "script|var|delete|exec";
+    let inj_str = "script|var|delete|exec|alert";
     let inj_arr = inj_str.split('|');
     for(let i = 0; i < inj_arr.length; i++) {
       if(this.inputMsg.indexOf(inj_arr[i]) >= 0) {

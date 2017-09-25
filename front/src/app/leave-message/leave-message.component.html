@@ -13,9 +13,10 @@
       </nz-input>
     </div>
     <div id="msg">
-      <nz-input [(ngModel)]="inputMsg" nzType="textarea" 
-       nzPlaceHolder="给点建议吧..." [nzRows]="'6'">
-      </nz-input>
+      <textarea rows="6" placeholder="给点建议吧..." [(ngModel)]="inputMsg"
+      maxlength="500">
+      </textarea>
+      <p style="text-align: right"> {{inputMsg.length}} &nbsp;/&nbsp;500 </p>
     </div>
     <div class="bottom">
       <label nz-checkbox [(ngModel)]="anonymous">

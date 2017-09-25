@@ -21,3 +21,12 @@ html, body {
 :host ::ng-deep .custom-card p {
     color: #999;
 }
+input-placeholder {
+    color: #A9A9A9;      
+}
+::-webkit-input-placeholder { /* WebKit browsers */  
+    color: #A9A9A9;  
+}
+textarea-placeholder {
+    color: #A9A9A9;     
+}
