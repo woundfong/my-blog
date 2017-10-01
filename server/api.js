@@ -8,9 +8,9 @@ var pool = mysql.createPool( dbConfig.mysql );
 
 var responseJSON = function (res, result) {
     if(typeof result === 'undefined') { 
-      res.end(JSON.stringify({code:'-200', msg: '留言失败'})); 
+      res.json({code:'-200', msg: '留言失败'}); 
     }else {
-      res.end(JSON.stringify(result));
+      res.json(result);
     }
 };
 
