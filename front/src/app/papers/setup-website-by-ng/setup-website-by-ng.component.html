@@ -1,6 +1,18 @@
 <header id="fade-header" *ngIf="isFadeHeaderShow">
   <h1>{{paperTitle}}</h1>
 </header>
+<nz-anchor [nzOffsetTop]="100">
+  <nz-link nzHref="#writen-before" nzTitle="前言"></nz-link>
+  <nz-link nzHref="#own-a-serer" nzTitle="购买阿里云服务器"></nz-link>
+  <nz-link nzHref="#nodejs-envir" nzTitle="安装node环境"></nz-link>
+  <nz-link nzHref="#own-a-domain" nzTitle="购买域名"></nz-link>
+  <nz-link nzHref="#nginx-agency" nzTitle="Nginx反向代理"></nz-link>
+  <nz-link nzHref="#PM2" nzTitle="PM2管理node进程"></nz-link>
+  <nz-link nzHref="#npm-env" nzTitle="npm安装模块的环境变量问题"></nz-link>
+  <nz-link nzHref="#deploy-ng2" nzTitle="布置本地angular2项目到服务器上"></nz-link>
+  <nz-link nzHref="#writen-after" nzTitle="写在最后"></nz-link>
+  
+</nz-anchor>
 <nz-card class="paper-card">
   <ng-template #title class="card-content">
     <p id="paper-title" style="text-align: left;font-size:1.5em">{{paperTitle}}</p>
@@ -29,7 +41,7 @@
         <!-- <nz-anchor>
           <nz-link nzHref="#writen-before" nzTitle="前言"></nz-link>
           <nz-link nzHref="#own-a-serer" nzTitle="购买阿里云服务器"></nz-link>
-          <nz-link nzHref="#own-a-domain" nzTitle="购买域名"></nz-link>          
+          <nz-link nzHref="#own-a-domain" nzTitle="购买域名"></nz-link>
         </nz-anchor> -->
       <div class="writen" id="writen-before">
         <h3>前言</h3>
@@ -49,18 +61,17 @@
             <img id="my-server-img" src="../../../assets/my-server.png"/>
           </div>
           <figcaption>我的服务器</figcaption>
-          
+
         </figure>
         <p class="paragraph">
           因为我还是个大四在校生，我买的是阿里云的学生机，每月9.9块，单核CPU，2GB内存，而且附加的OSS也是挺便宜的。选择地区的时候要注意了。
-          我当时购买的时候不知道为什么不让我买华南地区的，所以我的服务器变成了华北2区的，这会对加载速度有影响。尽量买OSS吧，之后会有解释。
-          购买的过程就不详细阐述了。
+          我当时购买的时候不知道为什么不让我买华南地区的，所以我的服务器变成了华北2区的，这会对加载速度有影响。购买的过程就不详细阐述了。
         </p>
         <p class="steps-second-title"> 远程连接 </p>
         <p class="paragraph">
           第一次登录服务器需要设置登录密码，注意这个和等下的连接密码不一样。
         </p>
-        <p class="paragraph">  
+        <p class="paragraph">
           远程连接有两种方法：使用阿里云官网的远程连接接口，或者windows下使用
           <a href="https://www.netsarang.com/products/xsh_overview.html" target="_blank">Xshell</a>
           ，两者各有不同，大多数情况下使用Xshell是比较方便的。
@@ -74,7 +85,7 @@
             <img id="xshell-connection-img" src="../../../assets/xshell-connection.png" />
           </div>
           <figcaption>新建连接</figcaption>
-          
+
         </figure>
         <p class="paragraph">
           主机处填写服务器的公网ip，端口号为22，协议为SSH。点击确定之后输入用户名：root，密码为刚才设定的密码，
@@ -91,11 +102,11 @@
             <img src="../../../assets/securityGroupConfig.png" />
           </div>
           <figcaption>安全组配置</figcaption>
-  
+
         </figure>
         <p class="paragraph">
           之后的大致步骤如图所示：
-        </p>        
+        </p>
         <nz-steps [(nzCurrent)]="securityGroupSteps.index">
           <nz-step [nzTitle]="'安全组列表'"
            (click)="changeSecurityGroupSteps(0)"></nz-step>
@@ -220,7 +231,7 @@
                 <div class="img-shadow"></div>
                 <img id="xshell-connection-img" src="../../../assets/myDomain.png" />
               </div>
-              <figcaption>我的域名</figcaption>   
+              <figcaption>我的域名</figcaption>
             </figure>
             <p class="paragraph">
               点击解析，进入域名解析列表。
@@ -267,7 +278,7 @@
             <div class="img-shadow"></div>
             <img id="nginx-index-img" src="../../../assets/nginx-index.png" />
           </div>
-          <figcaption>nginx欢迎页</figcaption>   
+          <figcaption>nginx欢迎页</figcaption>
         </figure>
         <p class="steps-second-title"> Nginx代理 </p>
         <p class="paragraph">
@@ -306,7 +317,7 @@
             <span>http://<公网IP>/helloworld</span></button>
           就能代理到3000端口。我们可以启动前面建好的helloworld.js文件，运行在3000端口，这时候我们就能看到网页
           显示Hello&nbsp;World了。
-        </p>  
+        </p>
         <figure>
           <div class="figure-box">
             <div class="img-shadow"></div>
@@ -329,7 +340,7 @@
           </ol>
         </div>
       </div>
-      <div id="nodejs-envir" class="steps">
+      <div id="PM2" class="steps">
         <p class="steps-title"> 五、PM2管理node进程 </p>
         <p class="paragraph">
           <a href="http://pm2.io/">PM2</a>可以帮助我们管理node进程，通过pm2开启的进程可以得到保证一直在线。
@@ -357,7 +368,7 @@
           </ol>
         </div>
       </div>
-      <div id="nodejs-envir" class="steps">
+      <div id="npm-env" class="steps">
         <p class="steps-title"> 六、npm安装模块的环境变量问题 </p>
         <p class="paragraph">
           通过npm安装的全局模块，我这边是用不了的，包括后面装的express，ng等等，一开始没找对方法只能通过alias的方法
@@ -605,7 +616,7 @@
       </div>
       <div id="writen-after" class="writen">
         <h3> 写在最后 </h3>
-        <p class="paragraph"> 
+        <p class="paragraph">
           我是一名刚步入大四的前端小白，可以说什么都不懂。非常感谢我的实习导师<a href="http://yedanbo.com/">叶丹波</a>
           大哥，他教会了我很多。对于我来说，写出一个网站是很难的，因此我网站的很多布局都是参考他的，他也有一篇是腾讯云布置nodejs
           网站的教程，大同小异，我这里也提出了许多我遇到的问题和解决方法。
